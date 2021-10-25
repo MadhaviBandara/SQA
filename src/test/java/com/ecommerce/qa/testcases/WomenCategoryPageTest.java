@@ -39,15 +39,22 @@ public class WomenCategoryPageTest extends TestBase {
         boolean flag = womenCategoryPage.validateImg();
         Assert.assertTrue(flag);
     }
+
     @Test(priority = 3)
     public void selectItemTest(){
         itemPage = womenCategoryPage.selectItem();
-
+        womenCategoryPage.obtainInvoice();
     }
 
 //    @Test(priority = 4)
-//    public void selectItemByListNoTest(){
-//        womenCategoryPage.selectItemByListNo(1);
+//    public void validateCart(){
+//        boolean cartValidated = itemPage.validateCart();
+//        Assert.assertTrue(cartValidated);
+//    }
+
+//    @Test(priority = 4)
+//    public void proceedToCheckout() {
+//        itemPage.obtainInvoice();
 //    }
 
     @AfterMethod
