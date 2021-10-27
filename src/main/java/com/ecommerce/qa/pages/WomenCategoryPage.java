@@ -51,32 +51,14 @@ public class WomenCategoryPage extends TestBase {
     @FindBy(xpath = "//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/span")
     WebElement continueShopping;
     @FindBy(xpath = "//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a")
-    WebElement proceedToCheckout;
-    @FindBy(xpath = "//*[@id='center_column']/p[2]/a[1]")
-    WebElement proceedSummary;
-    @FindBy(xpath = "//*[@id='center_column']/form/p/button")
-    WebElement proceedAddress;
-    @FindBy(xpath = "//*[@id='form']/div/p[2]/label")
-    WebElement termsAndConditions;
-    @FindBy(xpath = "//*[@id='form']/p/button")
-    WebElement proceedShipping;
-    @FindBy(xpath = "//*[@id='HOOK_PAYMENT']/div[1]/div/p/a")
-    WebElement payByBank;
-    @FindBy(xpath = "//*[@id='cart_navigation']/button")
-    WebElement confirmPayment;
-    @FindBy(xpath = "//*[@id='center_column']/p/a")
-    WebElement orderHistory;
-    @FindBy(xpath = "//*[@id=\"order-list\"]/tbody/tr[1]/td[6]/a")
-    WebElement invoice;
+    WebElement proceed;
 
     public WomenCategoryPage(){
         PageFactory.initElements(driver, this);
     }
-
     public String validateWomenCategoryPageTitle(){
         return driver.getTitle();
     }
-
     public boolean validateImg(){
         return womenImg.isDisplayed();
     }
@@ -109,18 +91,7 @@ public class WomenCategoryPage extends TestBase {
         addItemToCart(onHover5,item5);
         addItemToCart(onHover6,item6);
         addItemToCart(onHover7,item7);
-        wait.until(ExpectedConditions.elementToBeClickable(proceedToCheckout)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(proceed)).click();
         return new ItemPage();
-    }
-
-    public void obtainInvoice(){
-        wait.until(ExpectedConditions.elementToBeClickable(proceedSummary)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(proceedAddress)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(termsAndConditions)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(proceedShipping)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(payByBank)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(confirmPayment)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(orderHistory)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(invoice)).click();
     }
 }

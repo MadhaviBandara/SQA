@@ -32,29 +32,47 @@ public class WomenCategoryPageTest extends TestBase {
     public void validateWomenCategoryPageTitleTest(){
         String title = womenCategoryPage.validateWomenCategoryPageTitle();
         Assert.assertEquals(title, "Women - My Store");
+        driver.quit();
     }
 
     @Test(priority = 2)
     public void validateImgTest(){
         boolean flag = womenCategoryPage.validateImg();
         Assert.assertTrue(flag);
+        driver.quit();
     }
 
     @Test(priority = 3)
     public void selectItemTest(){
         itemPage = womenCategoryPage.selectItem();
-        womenCategoryPage.obtainInvoice();
+        itemPage.proceedToCheckout();
+        String status = itemPage.validatePayment();
+        Assert.assertEquals(status, "Your order on My Store is complete.");
+        itemPage.proceedToCheckout();
     }
 
 //    @Test(priority = 4)
 //    public void validateCart(){
-//        boolean cartValidated = itemPage.validateCart();
-//        Assert.assertTrue(cartValidated);
 //    }
 
-//    @Test(priority = 4)
-//    public void proceedToCheckout() {
-//        itemPage.obtainInvoice();
+//    @Test(priority = 5)
+//    public void proceedToCheckout(){
+//        itemPage.proceedToCheckout();
+//    }
+
+//    @Test(priority = 6)
+//    public void AgreeToTerms(){
+//    }
+
+//    @Test(priority = 7)
+//    public void validatePayment(){
+//        String status = itemPage.validatePayment();
+//        Assert.assertEquals(status, "Your order on My Store is complete.");
+//    }
+
+//    @Test(priority = 8)
+//    public void obtainInvoice(){
+//        itemPage.proceedToCheckout();
 //    }
 
     @AfterMethod

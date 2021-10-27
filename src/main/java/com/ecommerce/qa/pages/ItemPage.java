@@ -7,8 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.List;
-
 public class ItemPage extends TestBase {
 
     Actions actions = new Actions(driver);
@@ -16,50 +14,40 @@ public class ItemPage extends TestBase {
 
     @FindBy(xpath = "//*[@id='center_column']/p[2]/a[1]")
     WebElement proceedSummary;
-
     @FindBy(xpath = "//*[@id='center_column']/form/p/button")
     WebElement proceedAddress;
-
     @FindBy(xpath = "//*[@id='form']/div/p[2]/label")
     WebElement termsAndConditions;
-
     @FindBy(xpath = "//*[@id='form']/p/button")
     WebElement proceedShipping;
-
     @FindBy(xpath = "//*[@id='HOOK_PAYMENT']/div[1]/div/p/a")
     WebElement payByBank;
-
     @FindBy(xpath = "//*[@id='cart_navigation']/button")
     WebElement confirmPayment;
 
+    @FindBy(xpath ="//*[@id=\"center_column\"]/div/p/strong" )
+    WebElement paymentStatus;
+
     @FindBy(xpath = "//*[@id='center_column']/p/a")
     WebElement orderHistory;
+    @FindBy(xpath = "//*[@id=\"order-list\"]/tbody/tr[1]/td[6]/a")
+    WebElement invoice;
 
-    @FindBy(xpath = "//*[contains(@class,'ajax_block_products')]")
-    List<WebElement> allHovers;
-
-    @FindBy(xpath = "//*[contains(@class,'ajax_add_to_cart_button')]")
-    List<WebElement> allItems;
-
-    @FindBy(xpath = "//*[contains(@class,'cart_product')]")
-    List<WebElement> cartItems;
-
-    public boolean validateCart(){
-        int cartCount = cartItems.size();
-        int allCount = allItems.size();
-        boolean validationCheck;
-        validationCheck = allCount==cartCount ;
-        return validationCheck;
-    }
-
-    public void obtainInvoice(){
+    public void proceedToCheckout(){
         wait.until(ExpectedConditions.elementToBeClickable(proceedSummary)).click();
         wait.until(ExpectedConditions.elementToBeClickable(proceedAddress)).click();
         wait.until(ExpectedConditions.elementToBeClickable(termsAndConditions)).click();
         wait.until(ExpectedConditions.elementToBeClickable(proceedShipping)).click();
         wait.until(ExpectedConditions.elementToBeClickable(payByBank)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(confirmPayment)).click();
+    }
 
-//        confirmPayment.click();
-//        orderHistory.click();
+    public String validatePayment(){
+        return paymentStatus.getText();
+    }
+
+    public void obtainInvoice(){
+        wait.until(ExpectedConditions.elementToBeClickable(orderHistory)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(invoice)).click();
     }
 }
