@@ -3,6 +3,7 @@ package com.ecommerce.qa.base;
 import com.ecommerce.qa.util.TestUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -20,8 +21,9 @@ public class TestBase {
     public TestBase(){
         try{
             prop = new Properties();
-            FileInputStream ip = new FileInputStream("D:\\Uni\\4th Year\\Adv. SQA\\Assignment\\src\\"
-                    +"main\\java\\com\\ecommerce\\qa\\config\\config.properties");
+//            FileInputStream ip = new FileInputStream("D:\\Uni\\4th Year\\Adv. SQA\\Assignment\\src\\"
+//                    +"main\\java\\com\\ecommerce\\qa\\config\\config.properties");
+            FileInputStream ip = new FileInputStream("src/main/java/com/ecommerce/qa/config/config.properties");
             prop.load(ip);
         }catch(FileNotFoundException e){
             e.printStackTrace();
@@ -34,9 +36,14 @@ public class TestBase {
         String browserName = prop.getProperty("browser");
 
         if(browserName.equals("chrome")){
-            System.setProperty("webdriver.chrome.driver", "D:\\Uni\\4th Year\\Adv. SQA\\Assignment\\libs\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver","libs/chromedriver.exe");
             driver = new ChromeDriver();
         }
+        else if(browserName.equals("firefox")){
+            System.setProperty("webdriver.gecko.driver","libs/geckodriver");
+            driver = new FirefoxDriver();
+        }
+
 
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
