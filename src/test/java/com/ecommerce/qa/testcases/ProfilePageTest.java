@@ -2,12 +2,16 @@ package com.ecommerce.qa.testcases;
 
 import com.ecommerce.qa.base.TestBase;
 import com.ecommerce.qa.pages.*;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class ProfilePageTest extends TestBase {
+    private static final Logger logger = LogManager.getLogger(ProfilePageTest.class);
     LoginPage loginPage;
     ProfilePage profilePage;
     WomenCategoryPage womenCategoryPage;
@@ -22,7 +26,10 @@ public class ProfilePageTest extends TestBase {
     //Initializing the driver
     @BeforeMethod
     public void setUp(){
+        PropertyConfigurator.configure("D:\\Uni\\4th Year\\Adv. SQA\\Assignment\\src\\log4j.properties");
         initialization();
+        logger.info("Opening Website");
+        logger.info("Opening Website");
         loginPage = new LoginPage(); //Create Login Page obj
         profilePage = loginPage.Login(prop.getProperty("username"),prop.getProperty("password")); //Login using that obj
     }

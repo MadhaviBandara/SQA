@@ -16,13 +16,9 @@ public class TestBase {
     public static WebDriver driver;
     public static Properties prop;
 
-
-
     public TestBase(){
         try{
             prop = new Properties();
-//            FileInputStream ip = new FileInputStream("D:\\Uni\\4th Year\\Adv. SQA\\Assignment\\src\\"
-//                    +"main\\java\\com\\ecommerce\\qa\\config\\config.properties");
             FileInputStream ip = new FileInputStream("src/main/java/com/ecommerce/qa/config/config.properties");
             prop.load(ip);
         }catch(FileNotFoundException e){

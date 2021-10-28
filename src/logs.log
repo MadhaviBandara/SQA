@@ -1,0 +1,26 @@
+2021-10-28 11:10:40 INFO  LoginPageTest:27 - opening website
+2021-10-28 11:10:40 INFO  LoginPageTest:29 - opening website
+2021-10-28 11:10:57 INFO  LoginPageTest:27 - opening website
+2021-10-28 11:10:57 INFO  LoginPageTest:29 - opening website
+2021-10-28 11:11:14 INFO  LoginPageTest:27 - opening website
+2021-10-28 11:11:14 INFO  LoginPageTest:29 - opening website
+2021-10-28 11:11:29 INFO  LoginPageTest:47 - Login successful
+2021-10-28 11:22:02 INFO  LoginPageTest:27 - Opening Website
+2021-10-28 11:22:06 INFO  LoginPageTest:27 - Opening Website
+2021-10-28 11:22:20 INFO  LoginPageTest:27 - Opening Website
+2021-10-28 11:24:11 INFO  LoginPageTest:27 - Opening Website
+2021-10-28 11:24:11 INFO  LoginPageTest:35 - Login Page Title Validated
+2021-10-28 11:24:27 INFO  LoginPageTest:27 - Opening Website
+2021-10-28 11:24:27 INFO  LoginPageTest:42 - Login Page Image Validated
+2021-10-28 11:24:42 INFO  LoginPageTest:27 - Opening Website
+2021-10-28 11:27:55 INFO  LoginPageTest:27 - Opening Website
+2021-10-28 11:27:55 INFO  LoginPageTest:35 - Login Page Title Validated
+2021-10-28 11:28:12 INFO  LoginPageTest:27 - Opening Website
+2021-10-28 11:28:12 INFO  LoginPageTest:42 - Login Page Image Validated
+2021-10-28 11:28:29 INFO  LoginPageTest:27 - Opening Website
+2021-10-28 11:28:43 INFO  LoginPageTest:48 - Login successful
+2021-10-28 11:34:02 INFO  WomenCategoryPageTest:31 - Opening Website
+2021-10-28 11:34:26 INFO  WomenCategoryPageTest:41 - Women Category Page Title Validated
+2021-10-28 11:34:41 INFO  WomenCategoryPageTest:31 - Opening Website
+2021-10-28 11:35:05 INFO  WomenCategoryPageTest:49 - Women Category Page Logo Validated
+2021-10-28 11:35:22 INFO  WomenCategoryPageTest:31 - Opening Website
