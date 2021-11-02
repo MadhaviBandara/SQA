@@ -12,6 +12,11 @@ public class ItemPage extends TestBase {
     Actions actions = new Actions(driver);
     WebDriverWait wait = new WebDriverWait(driver, 5);
 
+//    @FindBy(xpath = "//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a")
+//    WebElement cartHover ;
+//    @FindBy(xpath = "//*[@id=\"button_order_cart\"]")
+//    WebElement proceed;
+
     @FindBy(xpath = "//*[@id='center_column']/p[2]/a[1]")
     WebElement proceedSummary;
     @FindBy(xpath = "//*[@id='center_column']/form/p/button")
@@ -34,6 +39,10 @@ public class ItemPage extends TestBase {
     WebElement invoice;
 
     public void proceedToCheckout(){
+//        actions.moveToElement(cartHover).perform();
+//        wait.until(ExpectedConditions.elementToBeClickable(proceed)).click();
+//        wait.until(ExpectedConditions.elementToBeClickable(proceed)).click();
+
         wait.until(ExpectedConditions.elementToBeClickable(proceedSummary)).click();
         wait.until(ExpectedConditions.elementToBeClickable(proceedAddress)).click();
         wait.until(ExpectedConditions.elementToBeClickable(termsAndConditions)).click();

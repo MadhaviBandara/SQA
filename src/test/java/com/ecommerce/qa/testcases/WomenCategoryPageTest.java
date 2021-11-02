@@ -53,9 +53,12 @@ public class WomenCategoryPageTest extends TestBase {
     @Test(priority = 3)
     public void selectItemTest(){
         itemPage = womenCategoryPage.selectItem();
-        itemPage.proceedToCheckout();
-        String status = itemPage.validatePayment();
+        boolean cartValidate = womenCategoryPage.validateCart();
+        Assert.assertTrue(cartValidate);
+        womenCategoryPage.proceedToCheckout();
+        String status = womenCategoryPage.validatePayment();
         Assert.assertEquals(status, "Your order on My Store is complete.");
+        womenCategoryPage.obtainInvoice();
         logger.info("Item selection successful");
         itemPage.proceedToCheckout();
     }
