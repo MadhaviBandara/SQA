@@ -15,6 +15,9 @@ public class WomenCategoryPage extends TestBase {
     Actions actions = new Actions(driver);
     WebDriverWait wait = new WebDriverWait(driver, 5);
 
+    List<WebElement> listOfItems ;
+    List<WebElement> listOfCartItems ;
+
     @FindBy(xpath = "//*[@id='center_column']/div[1]/div/div/div/p[1]/strong")
     WebElement womenImg;
 
@@ -50,7 +53,8 @@ public class WomenCategoryPage extends TestBase {
 
     @FindBy(xpath = "//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/span")
     WebElement continueShopping;
-    @FindBy(xpath = "//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a")
+
+    @FindBy(xpath = "//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/a")
     WebElement proceed;
 
     public WomenCategoryPage(){
@@ -64,14 +68,14 @@ public class WomenCategoryPage extends TestBase {
     }
 
     public void getPageItems(){
-        List<WebElement> listOfItems = driver.findElements(By.cssSelector("div[class='right-block'] h5 a[class='product-name']"));
+        listOfItems = driver.findElements(By.cssSelector("div[class='right-block'] h5 a[class='product-name']"));
         for (WebElement pageItem : listOfItems) {
             System.out.println(pageItem.getText());
         }
     }
 
     public void getCartItems(){
-        List<WebElement> listOfCartItems = driver.findElements(By.cssSelector("td[class='cart_desription'] p[class='product-name'] a"));
+        listOfCartItems = driver.findElements(By.cssSelector("td[class='cart_desription'] p[class='product-name'] a"));
         for (WebElement cartItem : listOfCartItems) {
             System.out.println(cartItem.getText());
         }
@@ -90,8 +94,56 @@ public class WomenCategoryPage extends TestBase {
         addItemToCart(onHover4,item4);
         addItemToCart(onHover5,item5);
         addItemToCart(onHover6,item6);
-        addItemToCart(onHover7,item7);
+        actions.moveToElement(onHover7).perform();
+        wait.until(ExpectedConditions.elementToBeClickable(item7)).click();
         wait.until(ExpectedConditions.elementToBeClickable(proceed)).click();
+        getPageItems();
         return new ItemPage();
+    }
+
+
+    public Boolean validateCart(){
+        getCartItems();
+        System.out.println(listOfItems);
+        System.out.println(listOfCartItems);
+        return true ;
+    }
+
+
+    @FindBy(xpath = "//*[@id='center_column']/p[2]/a[1]")
+    WebElement proceedSummary;
+    @FindBy(xpath = "//*[@id='center_column']/form/p/button")
+    WebElement proceedAddress;
+    @FindBy(xpath = "//*[@id='form']/div/p[2]/label")
+    WebElement termsAndConditions;
+    @FindBy(xpath = "//*[@id='form']/p/button")
+    WebElement proceedShipping;
+    @FindBy(xpath = "//*[@id='HOOK_PAYMENT']/div[1]/div/p/a")
+    WebElement payByBank;
+    @FindBy(xpath = "//*[@id='cart_navigation']/button")
+    WebElement confirmPayment;
+    @FindBy(xpath ="//*[@id=\"center_column\"]/div/p/strong" )
+    WebElement paymentStatus;
+    @FindBy(xpath = "//*[@id='center_column']/p/a")
+    WebElement orderHistory;
+    @FindBy(xpath = "//*[@id=\"order-list\"]/tbody/tr[1]/td[6]/a")
+    WebElement invoice;
+
+    public void proceedToCheckout(){
+        wait.until(ExpectedConditions.elementToBeClickable(proceedSummary)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(proceedAddress)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(termsAndConditions)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(proceedShipping)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(payByBank)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(confirmPayment)).click();
+    }
+
+    public String validatePayment(){
+        return paymentStatus.getText();
+    }
+
+    public void obtainInvoice(){
+        wait.until(ExpectedConditions.elementToBeClickable(orderHistory)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(invoice)).click();
     }
 }

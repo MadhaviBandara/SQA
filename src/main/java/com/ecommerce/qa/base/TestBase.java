@@ -21,9 +21,11 @@ public class TestBase {
             prop = new Properties();
             FileInputStream ip = new FileInputStream("src/main/java/com/ecommerce/qa/config/config.properties");
             prop.load(ip);
-        }catch(FileNotFoundException e){
+        }
+        catch(FileNotFoundException e){
             e.printStackTrace();
-        }catch(IOException e){
+        }
+        catch(IOException e){
             e.printStackTrace();
         }
     }
@@ -39,7 +41,6 @@ public class TestBase {
             System.setProperty("webdriver.gecko.driver","libs/geckodriver");
             driver = new FirefoxDriver();
         }
-
 
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
