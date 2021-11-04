@@ -1,5 +1,7 @@
 package com.ecommerce.qa.testcases;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import com.ecommerce.qa.base.TestBase;
 import com.ecommerce.qa.pages.HomePage;
 import com.ecommerce.qa.pages.LoginPage;
@@ -20,12 +22,17 @@ import org.testng.annotations.Test;
     public LoginPageTest(){
         super();
     }
+
+    private static ExtentReports report;
+    private static ExtentTest extentTest;
+
     @BeforeMethod
     public void setUp(){
         PropertyConfigurator.configure("D:\\Uni\\4th Year\\Adv. SQA\\Assignment\\src\\log4j.properties");
         initialization();
         logger.info("Opening Website");
         loginPage = new LoginPage();
+//        report = new ExtentReports(System.getProperty("user.dir")+"/ExtentReportResults.html/");
     }
 
     @Test(priority = 1)
@@ -46,6 +53,7 @@ import org.testng.annotations.Test;
     public void loginTest(){
         profilePage = loginPage.Login(prop.getProperty("username"),prop.getProperty("password"));
         logger.info("Login successful");
+        //extent.flush();
 
     }
 

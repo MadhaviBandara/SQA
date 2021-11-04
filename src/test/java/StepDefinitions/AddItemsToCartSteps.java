@@ -50,4 +50,14 @@ public class AddItemsToCartSteps extends TestBase {
         Assert.assertEquals(status, "Your order on My Store is complete.");
         womenCategoryPage.proceedToCheckout();
     }
+
+    @And("^Obtain invoice$")
+    public void obtain_invoice() throws Throwable {
+        System.out.println("Inside Step : Obtain Invoice");
+
+        //String status = womenCategoryPage.validatePayment();
+        //Assert.assertEquals(status, "Your order on My Store is complete.");
+        womenCategoryPage.obtainInvoice();
+        driver.quit();
+    }
 }

@@ -21,19 +21,19 @@ public class WomenCategoryPage extends TestBase {
     @FindBy(xpath = "//*[@id='center_column']/div[1]/div/div/div/p[1]/strong")
     WebElement womenImg;
 
-    @FindBy(xpath = "//*[@id='center_column']/ul/li[1]")
+    @FindBy(xpath = "//*[@id='center_column']/ul/li[1]/div/div[2]")
     WebElement onHover;
-    @FindBy(xpath = "//*[@id='center_column']/ul/li[2]")
+    @FindBy(xpath = "//*[@id='center_column']/ul/li[2]/div/div[2]")
     WebElement onHover2;
-    @FindBy(xpath = "//*[@id='center_column']/ul/li[3]")
+    @FindBy(xpath = "//*[@id='center_column']/ul/li[3]/div/div[2]")
     WebElement onHover3;
-    @FindBy(xpath = "//*[@id='center_column']/ul/li[4]")
+    @FindBy(xpath = "//*[@id='center_column']/ul/li[4]/div/div[2]")
     WebElement onHover4;
-    @FindBy(xpath = "//*[@id='center_column']/ul/li[5]")
+    @FindBy(xpath = "//*[@id='center_column']/ul/li[5]/div/div[2]")
     WebElement onHover5;
-    @FindBy(xpath = "//*[@id='center_column']/ul/li[6]")
+    @FindBy(xpath = "//*[@id='center_column']/ul/li[6]/div/div[2]")
     WebElement onHover6;
-    @FindBy(xpath = "//*[@id='center_column']/ul/li[7]")
+    @FindBy(xpath = "//*[@id='center_column']/ul/li[7]/div/div[2]")
     WebElement onHover7;
 
     @FindBy(xpath = "//*[@id='center_column']/ul/li[1]/div/div[2]/div[2]/a[1]")
@@ -51,7 +51,7 @@ public class WomenCategoryPage extends TestBase {
     @FindBy(xpath = "//*[@id='center_column']/ul/li[7]/div/div[2]/div[2]/a[1]")
     WebElement item7;
 
-    @FindBy(xpath = "//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/span")
+    @FindBy(xpath = "//*[@id='layer_cart']/div[1]/div[2]/div[4]/span")
     WebElement continueShopping;
 
     @FindBy(xpath = "//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/a")
@@ -110,7 +110,7 @@ public class WomenCategoryPage extends TestBase {
     }
 
 
-    @FindBy(xpath = "//*[@id='center_column']/p[2]/a[1]")
+    @FindBy(xpath = "//*[@id='center_column']/p/a[1]")
     WebElement proceedSummary;
     @FindBy(xpath = "//*[@id='center_column']/form/p/button")
     WebElement proceedAddress;
@@ -124,7 +124,7 @@ public class WomenCategoryPage extends TestBase {
     WebElement confirmPayment;
     @FindBy(xpath ="//*[@id=\"center_column\"]/div/p/strong" )
     WebElement paymentStatus;
-    @FindBy(xpath = "//*[@id='center_column']/p/a")
+    @FindBy(xpath = "//*[@id=\"center_column\"]/p[2]/a")
     WebElement orderHistory;
     @FindBy(xpath = "//*[@id=\"order-list\"]/tbody/tr[1]/td[6]/a")
     WebElement invoice;
