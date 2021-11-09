@@ -1,81 +1,94 @@
 {
 	"info": {
-		"_postman_id": "363b7de7-8f26-425c-be2b-8556d7993409",
+		"_postman_id": "cef933b3-8361-4317-9b26-1578e31994c9",
 		"name": "SQA",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "TC-01",
+			"name": "visit_page",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"{\r",
-							"    \"name\": \"morpheus\",\r",
-							"    \"job\": \"leader\"\r",
-							"}"
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2s\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
 						],
 						"type": "text/javascript"
 					}
 				}
 			],
-			"protocolProfileBehavior": {
-				"disabledSystemHeaders": {}
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://automationpractice.com/index.php",
+					"protocol": "http",
+					"host": [
+						"automationpractice",
+						"com"
+					],
+					"path": [
+						"index.php"
+					]
+				},
+				"description": "Visit to main page"
 			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2s\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text",
-						"disabled": true
-					},
-					{
-						"key": "Cookie",
-						"value": "PrestaShop-a30a9934ef476d11b6cc3c983616e364=kYtlweNr4tJfX4Bdi1mhTWU46RMk1zpNe1XAUODG%2FAuvpWUb7VsUZGHWvXNFBo1s29xi%2BlnrV1V%2FMAl0c32kiGR8Rea9d%2FO6bTbyseaEOF4IacyraIZIT2VQDxoAOdlK7lOVpm0yoCMan0UUA5P07jgW5OJdpkcU4%2FnGNix87vDi8W55%2Fzku%2FqulYus0s3XVYSGXyoNMIB6d4iIYkzozj1Tx3S6Sx%2BaQQGD61x8SmitayoVRh7NqYJoGHR4XA89bEFbRcJ43MXNThb7%2FQUqpWLo3twaD88kPUUdjqN%2BAaN1wHqdtPHQJ2bR1YF%2FwUC0q6big6Gzcb0BgFjOM85Hy9kKwj%2FsFyNqeUKBjgwDmIF5jkiG3P0EW74SRSE3lqwCDN0TA3JHXkVn2xlfWZgDDd22g4sMwMJkl9a7zCKfJ7ndoMTi%2B6nTZBSGA3kFGhptbLWy5ZfjKq5Mvd4h1DC8DLfaFaF369pu56PqHll8y8c0%3D000363",
-						"type": "text"
-					}
-				],
+				"header": [],
 				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
+					"mode": "formdata",
+					"formdata": [
 						{
-							"key": "controller",
-							"value": "cart",
+							"key": "email",
+							"value": "2017is014@gmail.com",
 							"type": "text"
 						},
 						{
-							"key": "add",
-							"value": "1",
+							"key": "passwd",
+							"value": "ucsc@123",
 							"type": "text"
 						},
 						{
-							"key": "ajax",
-							"value": "true",
+							"key": "back",
+							"value": "my-account",
 							"type": "text"
 						},
 						{
-							"key": "qty",
-							"value": "1",
-							"type": "text"
-						},
-						{
-							"key": "id_product",
-							"value": "1",
-							"type": "text"
-						},
-						{
-							"key": "token",
-							"value": "89314a8bdde6e16f36945ea6a7912f2c",
+							"key": "SubmitLogin",
+							"value": "",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://automationpractice.com/index.php?rand=1636384031153",
+					"raw": "http://automationpractice.com/index.php?controller=authentication",
 					"protocol": "http",
 					"host": [
 						"automationpractice",
@@ -86,11 +99,391 @@
 					],
 					"query": [
 						{
-							"key": "rand",
-							"value": "1636384031153"
+							"key": "controller",
+							"value": "authentication"
 						}
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "nav_item_page",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2s\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://automationpractice.com/index.php?id_category=3&controller=category",
+					"protocol": "http",
+					"host": [
+						"automationpractice",
+						"com"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "id_category",
+							"value": "3"
+						},
+						{
+							"key": "controller",
+							"value": "category"
+						}
+					]
+				},
+				"description": "navigate to item page"
+			},
+			"response": []
+		},
+		{
+			"name": "add_to_cart",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2s\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://automationpractice.com/index.php?id_category=3&controller=category",
+					"protocol": "http",
+					"host": [
+						"automationpractice",
+						"com"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "id_category",
+							"value": "3"
+						},
+						{
+							"key": "controller",
+							"value": "category"
+						}
+					]
+				},
+				"description": "add item to the cart"
+			},
+			"response": []
+		},
+		{
+			"name": "checkout",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2s\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://automationpractice.com/index.php?controller=order",
+					"protocol": "http",
+					"host": [
+						"automationpractice",
+						"com"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "controller",
+							"value": "order"
+						}
+					]
+				},
+				"description": "checkout the items on the cart"
+			},
+			"response": []
+		},
+		{
+			"name": "confirm_summary",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2s\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://automationpractice.com/index.php?controller=order&step=1",
+					"protocol": "http",
+					"host": [
+						"automationpractice",
+						"com"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "controller",
+							"value": "order"
+						},
+						{
+							"key": "step",
+							"value": "1"
+						}
+					]
+				},
+				"description": "confirm the order summary"
+			},
+			"response": []
+		},
+		{
+			"name": "confirm_address",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2s\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://automationpractice.com/index.php?controller=order",
+					"protocol": "http",
+					"host": [
+						"automationpractice",
+						"com"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "controller",
+							"value": "order"
+						}
+					]
+				},
+				"description": "confirm order address"
+			},
+			"response": []
+		},
+		{
+			"name": "pay_by_bank",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2s\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://automationpractice.com/index.php?fc=module&module=bankwire&controller=payment",
+					"protocol": "http",
+					"host": [
+						"automationpractice",
+						"com"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "fc",
+							"value": "module"
+						},
+						{
+							"key": "module",
+							"value": "bankwire"
+						},
+						{
+							"key": "controller",
+							"value": "payment"
+						}
+					]
+				},
+				"description": "confirming the payment method"
+			},
+			"response": []
+		},
+		{
+			"name": "confirm_order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2s\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://automationpractice.com/index.php?fc=module&module=bankwire&controller=validation",
+					"protocol": "http",
+					"host": [
+						"automationpractice",
+						"com"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "fc",
+							"value": "module"
+						},
+						{
+							"key": "module",
+							"value": "bankwire"
+						},
+						{
+							"key": "controller",
+							"value": "validation"
+						}
+					]
+				},
+				"description": "order confirmation"
+			},
+			"response": []
+		},
+		{
+			"name": "order_list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2s\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://automationpractice.com/index.php?controller=order-confirmation&id_cart=3957616&id_module=3&id_order=375834&key=38711ee4fb7cad96806ebd487d39e91f",
+					"protocol": "http",
+					"host": [
+						"automationpractice",
+						"com"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "controller",
+							"value": "order-confirmation"
+						},
+						{
+							"key": "id_cart",
+							"value": "3957616"
+						},
+						{
+							"key": "id_module",
+							"value": "3"
+						},
+						{
+							"key": "id_order",
+							"value": "375834"
+						},
+						{
+							"key": "key",
+							"value": "38711ee4fb7cad96806ebd487d39e91f"
+						}
+					]
+				},
+				"description": "checks the orderlist for the order"
 			},
 			"response": []
 		}

@@ -44,5 +44,8 @@ public class Login extends TestBase {
     @Then("^navigate to profile$")
     public void navigate_to_profile() throws Throwable {
         System.out.println("Inside Step : navigated to profile");
+
+        String ProfilePageTitle = profilePage.verifyProfilePageTitle();
+        Assert.assertEquals(ProfilePageTitle,"My account - My Store", "Title of the profile page not matched");
     }
 }

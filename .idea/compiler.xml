@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="SQA" />
         <module name="Assignment" />
+        <module name="SQA" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />
