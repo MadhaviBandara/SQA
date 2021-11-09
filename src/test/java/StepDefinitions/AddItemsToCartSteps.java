@@ -14,18 +14,18 @@ public class AddItemsToCartSteps extends TestBase {
     ProfilePage profilePage;
     ItemPage itemPage;
 
-    @Given("^user logged in$")
+    @Given("^user logged to the system$")
     public void user_logged_in() throws Throwable {
-        System.out.println("Inside Step : user logged in");
+        System.out.println("Inside Step : user logged to the system");
 
         initialization();
         loginPage = new LoginPage();
         profilePage = loginPage.Login(prop.getProperty("username"),prop.getProperty("password"));
     }
 
-    @And("^page validated$")
+    @And("^user navigates to item page$")
     public void page_validated() throws Throwable {
-        System.out.println("Inside Step : page validated");
+        System.out.println("Inside Step : user navigates to item page");
 
         womenCategoryPage = profilePage.GoToWomensCategory();
         String title = womenCategoryPage.validateWomenCategoryPageTitle();
@@ -34,29 +34,69 @@ public class AddItemsToCartSteps extends TestBase {
         Assert.assertTrue(flag);
     }
 
-    @When("^all items are selected$")
+    @When("^user selects all items and adds to cart$")
     public void all_items_are_selected() throws Throwable {
-        System.out.println("Inside Step : all items are selected");
-
-        itemPage = womenCategoryPage.selectItem();
-        womenCategoryPage.proceedToCheckout();
+        System.out.println("Inside Step : user selects all items and adds to cart");
+        womenCategoryPage.selectItems();
     }
 
-    @Then("^proceed to checkout$")
-    public void proceed_to_checkout() throws Throwable {
-        System.out.println("Inside Step : proceed to checkout");
-
-        String status = womenCategoryPage.validatePayment();
-        Assert.assertEquals(status, "Your order on My Store is complete.");
-        womenCategoryPage.proceedToCheckout();
-    }
-
-    @And("^Obtain invoice$")
+    @And("^cart table is successfully updated$")
     public void obtain_invoice() throws Throwable {
-        System.out.println("Inside Step : Obtain Invoice");
+        System.out.println("Inside Step : cart table is successfully updated");
+        womenCategoryPage.validateCart();
+    }
 
-        //String status = womenCategoryPage.validatePayment();
-        //Assert.assertEquals(status, "Your order on My Store is complete.");
+    @And("^user accepts the order summary$")
+    public void accept_summary() throws Throwable {
+        System.out.println("Inside Step : user accepts the order summary");
+        womenCategoryPage.proceedToAddress();
+    }
+
+    @And("^user checks shipping address$")
+    public void check_address() throws Throwable {
+        System.out.println("Inside Step : user checks shipping address");
+        womenCategoryPage.proceedToShipping();
+    }
+
+    @And("^agreed to terms$")
+    public void agree_to_terms() throws Throwable {
+        System.out.println("Inside Step : agreed to terms");
+        womenCategoryPage.agreeToTerms();
+    }
+
+    @And("^user checks whether the agreement was accepted$")
+    public void validate_agreement() throws Throwable {
+        System.out.println("Inside Step : user checks whether the agreement was accepted");
+        womenCategoryPage.validateAgreeToTerms();
+    }
+
+    @And("^user checks shipping option$")
+    public void check_shipping() throws Throwable {
+        System.out.println("Inside Step : user checks shipping option");
+        womenCategoryPage.proceedToPayment();
+    }
+
+    @And("^user selects payment method$")
+    public void select_payment() throws Throwable {
+        System.out.println("Inside Step : user selects payment method");
+        womenCategoryPage.orderPayment();
+    }
+
+    @And("^user confirms order$")
+    public void order_confirm() throws Throwable {
+        System.out.println("Inside Step : user confirms order");
+        womenCategoryPage.confirmOrder();
+    }
+
+    @And("^user checks whether payment is successful$")
+    public void validate_payment() throws Throwable {
+        System.out.println("Inside Step : user checks whether payment is successful");
+        womenCategoryPage.checkPaymentStatus();
+    }
+
+    @And("^generates invoice as a pdf$")
+    public void obtained_invoice() throws Throwable {
+        System.out.println("Inside Step : generates invoice as a pdf");
         womenCategoryPage.obtainInvoice();
         driver.quit();
     }

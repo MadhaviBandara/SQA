@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.util.List;
 
@@ -67,19 +68,6 @@ public class WomenCategoryPage extends TestBase {
         return womenImg.isDisplayed();
     }
 
-    public void getPageItems(){
-        listOfItems = driver.findElements(By.cssSelector("div[class='right-block'] h5 a[class='product-name']"));
-        for (WebElement pageItem : listOfItems) {
-            System.out.println(pageItem.getText());
-        }
-    }
-
-    public void getCartItems(){
-        listOfCartItems = driver.findElements(By.cssSelector("td[class='cart_desription'] p[class='product-name'] a"));
-        for (WebElement cartItem : listOfCartItems) {
-            System.out.println(cartItem.getText());
-        }
-    }
 
     private void addItemToCart(WebElement hover , WebElement itemVal){
         actions.moveToElement(hover).perform();
@@ -87,7 +75,7 @@ public class WomenCategoryPage extends TestBase {
         wait.until(ExpectedConditions.elementToBeClickable(continueShopping)).click();
     }
 
-    public ItemPage selectItem(){
+    public void selectItems(){
         addItemToCart(onHover,item);
         addItemToCart(onHover2,item2);
         addItemToCart(onHover3,item3);
@@ -98,52 +86,71 @@ public class WomenCategoryPage extends TestBase {
         wait.until(ExpectedConditions.elementToBeClickable(item7)).click();
         wait.until(ExpectedConditions.elementToBeClickable(proceed)).click();
         getPageItems();
-        return new ItemPage();
     }
 
-
-    public Boolean validateCart(){
-        getCartItems();
-        System.out.println(listOfItems);
-        System.out.println(listOfCartItems);
-        return true ;
+    public void getPageItems(){
+        listOfItems = driver.findElements(By.cssSelector("div[class='right-block'] h5 a[class='product-name']"));
+        for (WebElement pageItem : listOfItems) {
+            System.out.println(pageItem.getText());
+        }
     }
 
+    public void validateCart(){
+        listOfCartItems = driver.findElements(By.className("label-success"));
+        Assert.assertEquals(listOfCartItems.size(), 7);
+    }
 
-    @FindBy(xpath = "//*[@id='center_column']/p/a[1]")
-    WebElement proceedSummary;
-    @FindBy(xpath = "//*[@id='center_column']/form/p/button")
-    WebElement proceedAddress;
-    @FindBy(xpath = "//*[@id='form']/div/p[2]/label")
-    WebElement termsAndConditions;
-    @FindBy(xpath = "//*[@id='form']/p/button")
-    WebElement proceedShipping;
-    @FindBy(xpath = "//*[@id='HOOK_PAYMENT']/div[1]/div/p/a")
-    WebElement payByBank;
-    @FindBy(xpath = "//*[@id='cart_navigation']/button")
-    WebElement confirmPayment;
-    @FindBy(xpath ="//*[@id=\"center_column\"]/div/p/strong" )
-    WebElement paymentStatus;
-    @FindBy(xpath = "//*[@id=\"center_column\"]/p[2]/a")
-    WebElement orderHistory;
-    @FindBy(xpath = "//*[@id=\"order-list\"]/tbody/tr[1]/td[6]/a")
-    WebElement invoice;
-
-    public void proceedToCheckout(){
-        wait.until(ExpectedConditions.elementToBeClickable(proceedSummary)).click();
+    public void proceedToAddress(){
+        WebElement proceedAddress = driver.findElement(By.xpath("//*[@id='center_column']/p/a[1]/span"));
         wait.until(ExpectedConditions.elementToBeClickable(proceedAddress)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(termsAndConditions)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(proceedShipping)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(payByBank)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(confirmPayment)).click();
     }
 
-    public String validatePayment(){
-        return paymentStatus.getText();
+    public void proceedToShipping(){
+        WebElement proceedShipping = driver.findElement(By.xpath("//*[@id='center_column']/form/p/button"));
+        wait.until(ExpectedConditions.elementToBeClickable(proceedShipping)).click();
+    }
+
+    public void agreeToTerms(){
+        WebElement agreeTerms = driver.findElement(By.xpath("//*[@id=\"form\"]/div/p[2]/label"));
+        wait.until(ExpectedConditions.elementToBeClickable(agreeTerms)).click();
+    }
+
+    public void validateAgreeToTerms(){
+        WebElement checkbox = driver.findElement(By.xpath("//*[@id=\"cgv\"]"));
+        Assert.assertTrue(checkbox.isSelected());
+    }
+
+    public void proceedToPayment(){
+        WebElement proceedPayment = driver.findElement(By.xpath("//*[@id=\"form\"]/p/button/span"));
+        wait.until(ExpectedConditions.elementToBeClickable(proceedPayment)).click();
+    }
+
+    public void orderPayment(){
+        WebElement payByBank = driver.findElement(By.xpath("//*[@id='HOOK_PAYMENT']/div[1]/div/p/a"));
+        wait.until(ExpectedConditions.elementToBeClickable(payByBank)).click();
+    }
+
+    public void confirmOrder(){
+        WebElement orderConfirm = driver.findElement(By.xpath("//*[@id='cart_navigation']/button"));
+        wait.until(ExpectedConditions.elementToBeClickable(orderConfirm)).click();
+    }
+
+    public void checkPaymentStatus(){
+        WebElement paymentStatus = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div/p/strong"));
+        String status = paymentStatus.getText() ;
+        Assert.assertEquals(status, "Your order on My Store is complete.");
     }
 
     public void obtainInvoice(){
-        wait.until(ExpectedConditions.elementToBeClickable(orderHistory)).click();
+        WebElement goToProfile = driver.findElement(By.xpath("//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a/span"));
+        wait.until(ExpectedConditions.elementToBeClickable(goToProfile)).click();
+        WebElement history = driver.findElement(By.xpath("//*[@id=\"center_column\"]/div/div[1]/ul/li[1]/a/span"));
+        wait.until(ExpectedConditions.elementToBeClickable(history)).click();
+
+//        WebElement orderHistory = driver.findElement(By.xpath("//*[@id=\"center_column\"]/p[2]/a"));
+        //*[@id="order-list"]/tbody/tr[1]/td[6]/a
+        WebElement invoice =  driver.findElement(By.xpath("//*[@id=\"order-list\"]/tbody/tr[1]/td[6]/a"));
+//        wait.until(ExpectedConditions.elementToBeClickable(orderHistory)).click();
         wait.until(ExpectedConditions.elementToBeClickable(invoice)).click();
     }
 }

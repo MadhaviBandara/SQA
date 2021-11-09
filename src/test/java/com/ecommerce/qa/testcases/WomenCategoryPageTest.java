@@ -26,7 +26,8 @@ public class WomenCategoryPageTest extends TestBase {
 
     @BeforeMethod
     public void setUp(){
-        PropertyConfigurator.configure("D:\\Uni\\4th Year\\Adv. SQA\\Assignment\\src\\log4j.properties");
+//        PropertyConfigurator.configure("D:\\Uni\\4th Year\\Adv. SQA\\Assignment\\src\\log4j.properties");
+        PropertyConfigurator.configure("C:\\Users\\ravee\\Desktop\\SQA\\src\\log4j.properties");
         initialization();
         logger.info("Opening Website");
         loginPage = new LoginPage();
@@ -52,15 +53,17 @@ public class WomenCategoryPageTest extends TestBase {
 
     @Test(priority = 3)
     public void selectItemTest(){
-        itemPage = womenCategoryPage.selectItem();
-        boolean cartValidate = womenCategoryPage.validateCart();
-        Assert.assertTrue(cartValidate);
-        womenCategoryPage.proceedToCheckout();
-        String status = womenCategoryPage.validatePayment();
-        Assert.assertEquals(status, "Your order on My Store is complete.");
+        womenCategoryPage.selectItems();
+        womenCategoryPage.validateCart();
+        womenCategoryPage.proceedToAddress();
+        womenCategoryPage.proceedToShipping();
+        womenCategoryPage.agreeToTerms();
+        womenCategoryPage.validateAgreeToTerms();
+        womenCategoryPage.proceedToPayment();
+        womenCategoryPage.orderPayment();
+        womenCategoryPage.confirmOrder();
+        womenCategoryPage.checkPaymentStatus();
         womenCategoryPage.obtainInvoice();
-        logger.info("Item selection successful");
-        itemPage.proceedToCheckout();
     }
 
 //    @Test(priority = 4)

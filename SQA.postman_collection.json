@@ -1,0 +1,491 @@
+{
+	"info": {
+		"_postman_id": "cef933b3-8361-4317-9b26-1578e31994c9",
+		"name": "SQA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "visit_page",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2s\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://automationpractice.com/index.php",
+					"protocol": "http",
+					"host": [
+						"automationpractice",
+						"com"
+					],
+					"path": [
+						"index.php"
+					]
+				},
+				"description": "Visit to main page"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2s\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "2017is014@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "passwd",
+							"value": "ucsc@123",
+							"type": "text"
+						},
+						{
+							"key": "back",
+							"value": "my-account",
+							"type": "text"
+						},
+						{
+							"key": "SubmitLogin",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://automationpractice.com/index.php?controller=authentication",
+					"protocol": "http",
+					"host": [
+						"automationpractice",
+						"com"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "controller",
+							"value": "authentication"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "nav_item_page",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2s\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://automationpractice.com/index.php?id_category=3&controller=category",
+					"protocol": "http",
+					"host": [
+						"automationpractice",
+						"com"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "id_category",
+							"value": "3"
+						},
+						{
+							"key": "controller",
+							"value": "category"
+						}
+					]
+				},
+				"description": "navigate to item page"
+			},
+			"response": []
+		},
+		{
+			"name": "add_to_cart",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2s\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://automationpractice.com/index.php?id_category=3&controller=category",
+					"protocol": "http",
+					"host": [
+						"automationpractice",
+						"com"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "id_category",
+							"value": "3"
+						},
+						{
+							"key": "controller",
+							"value": "category"
+						}
+					]
+				},
+				"description": "add item to the cart"
+			},
+			"response": []
+		},
+		{
+			"name": "checkout",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2s\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://automationpractice.com/index.php?controller=order",
+					"protocol": "http",
+					"host": [
+						"automationpractice",
+						"com"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "controller",
+							"value": "order"
+						}
+					]
+				},
+				"description": "checkout the items on the cart"
+			},
+			"response": []
+		},
+		{
+			"name": "confirm_summary",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2s\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://automationpractice.com/index.php?controller=order&step=1",
+					"protocol": "http",
+					"host": [
+						"automationpractice",
+						"com"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "controller",
+							"value": "order"
+						},
+						{
+							"key": "step",
+							"value": "1"
+						}
+					]
+				},
+				"description": "confirm the order summary"
+			},
+			"response": []
+		},
+		{
+			"name": "confirm_address",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2s\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://automationpractice.com/index.php?controller=order",
+					"protocol": "http",
+					"host": [
+						"automationpractice",
+						"com"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "controller",
+							"value": "order"
+						}
+					]
+				},
+				"description": "confirm order address"
+			},
+			"response": []
+		},
+		{
+			"name": "pay_by_bank",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2s\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://automationpractice.com/index.php?fc=module&module=bankwire&controller=payment",
+					"protocol": "http",
+					"host": [
+						"automationpractice",
+						"com"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "fc",
+							"value": "module"
+						},
+						{
+							"key": "module",
+							"value": "bankwire"
+						},
+						{
+							"key": "controller",
+							"value": "payment"
+						}
+					]
+				},
+				"description": "confirming the payment method"
+			},
+			"response": []
+		},
+		{
+			"name": "confirm_order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2s\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://automationpractice.com/index.php?fc=module&module=bankwire&controller=validation",
+					"protocol": "http",
+					"host": [
+						"automationpractice",
+						"com"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "fc",
+							"value": "module"
+						},
+						{
+							"key": "module",
+							"value": "bankwire"
+						},
+						{
+							"key": "controller",
+							"value": "validation"
+						}
+					]
+				},
+				"description": "order confirmation"
+			},
+			"response": []
+		},
+		{
+			"name": "order_list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2s\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://automationpractice.com/index.php?controller=order-confirmation&id_cart=3957616&id_module=3&id_order=375834&key=38711ee4fb7cad96806ebd487d39e91f",
+					"protocol": "http",
+					"host": [
+						"automationpractice",
+						"com"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "controller",
+							"value": "order-confirmation"
+						},
+						{
+							"key": "id_cart",
+							"value": "3957616"
+						},
+						{
+							"key": "id_module",
+							"value": "3"
+						},
+						{
+							"key": "id_order",
+							"value": "375834"
+						},
+						{
+							"key": "key",
+							"value": "38711ee4fb7cad96806ebd487d39e91f"
+						}
+					]
+				},
+				"description": "checks the orderlist for the order"
+			},
+			"response": []
+		}
+	]
+}
