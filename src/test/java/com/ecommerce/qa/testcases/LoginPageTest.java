@@ -32,7 +32,6 @@ import org.testng.annotations.Test;
         initialization();
         logger.info("Opening Website");
         loginPage = new LoginPage();
-//        report = new ExtentReports(System.getProperty("user.dir")+"/ExtentReportResults.html/");
     }
 
     @Test(priority = 1)

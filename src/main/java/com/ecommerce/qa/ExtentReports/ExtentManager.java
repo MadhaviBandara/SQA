@@ -45,8 +45,7 @@ public class ExtentManager {
     }
 
     public static void initDirectories() {
-        try {
-            System.out.println("Heree");
+        try{
             createFolder(REPORT_FILE_PATH + OUTPUT_FOLDER_SCREENSHOTS);
         } catch (Exception e) {
             e.printStackTrace();
