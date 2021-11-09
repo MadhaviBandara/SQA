@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" verbose="0" name="Failed suite [Surefire suite]">
+  <test thread-count="1" verbose="0" name="Surefire test(failed)">
+    <classes>
+      <class name="com.ecommerce.qa.testcases.WomenCategoryPageTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="validateWomenCategoryPageTitleTest"/>
+        </methods>
+      </class> <!-- com.ecommerce.qa.testcases.WomenCategoryPageTest -->
+      <class name="com.ecommerce.qa.testcases.LoginPageTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="loginPageTitleTest"/>
+        </methods>
+      </class> <!-- com.ecommerce.qa.testcases.LoginPageTest -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->

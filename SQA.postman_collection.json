@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "363b7de7-8f26-425c-be2b-8556d7993409",
+		"name": "SQA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TC-01",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"{\r",
+							"    \"name\": \"morpheus\",\r",
+							"    \"job\": \"leader\"\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Cookie",
+						"value": "PrestaShop-a30a9934ef476d11b6cc3c983616e364=kYtlweNr4tJfX4Bdi1mhTWU46RMk1zpNe1XAUODG%2FAuvpWUb7VsUZGHWvXNFBo1s29xi%2BlnrV1V%2FMAl0c32kiGR8Rea9d%2FO6bTbyseaEOF4IacyraIZIT2VQDxoAOdlK7lOVpm0yoCMan0UUA5P07jgW5OJdpkcU4%2FnGNix87vDi8W55%2Fzku%2FqulYus0s3XVYSGXyoNMIB6d4iIYkzozj1Tx3S6Sx%2BaQQGD61x8SmitayoVRh7NqYJoGHR4XA89bEFbRcJ43MXNThb7%2FQUqpWLo3twaD88kPUUdjqN%2BAaN1wHqdtPHQJ2bR1YF%2FwUC0q6big6Gzcb0BgFjOM85Hy9kKwj%2FsFyNqeUKBjgwDmIF5jkiG3P0EW74SRSE3lqwCDN0TA3JHXkVn2xlfWZgDDd22g4sMwMJkl9a7zCKfJ7ndoMTi%2B6nTZBSGA3kFGhptbLWy5ZfjKq5Mvd4h1DC8DLfaFaF369pu56PqHll8y8c0%3D000363",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "controller",
+							"value": "cart",
+							"type": "text"
+						},
+						{
+							"key": "add",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "ajax",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "qty",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "id_product",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "89314a8bdde6e16f36945ea6a7912f2c",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://automationpractice.com/index.php?rand=1636384031153",
+					"protocol": "http",
+					"host": [
+						"automationpractice",
+						"com"
+					],
+					"path": [
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "rand",
+							"value": "1636384031153"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
