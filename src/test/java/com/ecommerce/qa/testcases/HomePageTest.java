@@ -31,7 +31,7 @@ public class HomePageTest extends TestBase {
     @Test(priority = 1)
     public void homePageTitleTest(){
         String title = homePage.validateHomePageTitle();
-        Assert.assertEquals(title, "My Store");
+        Assert.assertEquals(title, "Login - My Store");
     }
 
     @Test(priority = 2)

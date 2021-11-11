@@ -1,35 +1,171 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="13" passed="13">
   <reporter-output>
   </reporter-output>
-  <suite name="Surefire suite" duration-ms="39526" started-at="2021-11-03T12:41:20Z" finished-at="2021-11-03T12:41:59Z">
+  <suite name="Surefire suite" duration-ms="293305" started-at="2021-11-10T22:09:06 IST" finished-at="2021-11-10T22:13:59 IST">
     <groups>
     </groups>
-    <test name="Surefire test" duration-ms="39526" started-at="2021-11-03T12:41:20Z" finished-at="2021-11-03T12:41:59Z">
-      <class name="com.ecommerce.qa.testcases.WomenCategoryPageTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.ecommerce.qa.testcases.WomenCategoryPageTest@42e26948]" name="setUp" is-config="true" duration-ms="26613" started-at="2021-11-03T12:41:20Z" finished-at="2021-11-03T12:41:46Z">
+    <test name="Surefire test" duration-ms="293305" started-at="2021-11-10T22:09:06 IST" finished-at="2021-11-10T22:13:59 IST">
+      <class name="com.ecommerce.qa.testcases.HomePageTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.ecommerce.qa.testcases.HomePageTest@4d50efb8]" name="setUp" is-config="true" duration-ms="28545" started-at="2021-11-10T22:09:06 IST" finished-at="2021-11-10T22:09:35 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="validateWomenCategoryPageTitleTest()[pri:0, instance:com.ecommerce.qa.testcases.WomenCategoryPageTest@42e26948]" name="validateWomenCategoryPageTitleTest" duration-ms="1103" started-at="2021-11-03T12:41:46Z" finished-at="2021-11-03T12:41:47Z">
+        <test-method status="PASS" signature="homePageTitleTest()[pri:1, instance:com.ecommerce.qa.testcases.HomePageTest@4d50efb8]" name="homePageTitleTest" duration-ms="15" started-at="2021-11-10T22:09:35 IST" finished-at="2021-11-10T22:09:35 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- homePageTitleTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.ecommerce.qa.testcases.HomePageTest@4d50efb8]" name="tearDown" is-config="true" duration-ms="1268" started-at="2021-11-10T22:09:35 IST" finished-at="2021-11-10T22:09:36 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.ecommerce.qa.testcases.HomePageTest@4d50efb8]" name="setUp" is-config="true" duration-ms="9890" started-at="2021-11-10T22:09:36 IST" finished-at="2021-11-10T22:09:46 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="LogoImageTest()[pri:2, instance:com.ecommerce.qa.testcases.HomePageTest@4d50efb8]" name="LogoImageTest" duration-ms="112" started-at="2021-11-10T22:09:46 IST" finished-at="2021-11-10T22:09:46 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogoImageTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.ecommerce.qa.testcases.HomePageTest@4d50efb8]" name="tearDown" is-config="true" duration-ms="995" started-at="2021-11-10T22:09:46 IST" finished-at="2021-11-10T22:09:47 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.ecommerce.qa.testcases.HomePageTest -->
+      <class name="com.ecommerce.qa.testcases.ProfilePageTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.ecommerce.qa.testcases.ProfilePageTest@4923ab24]" name="setUp" is-config="true" duration-ms="14830" started-at="2021-11-10T22:10:26 IST" finished-at="2021-11-10T22:10:41 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyProfilePageTitleTest()[pri:1, instance:com.ecommerce.qa.testcases.ProfilePageTest@4923ab24]" name="verifyProfilePageTitleTest" duration-ms="15" started-at="2021-11-10T22:10:41 IST" finished-at="2021-11-10T22:10:41 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProfilePageTitleTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.ecommerce.qa.testcases.ProfilePageTest@4923ab24]" name="teardown" is-config="true" duration-ms="952" started-at="2021-11-10T22:10:41 IST" finished-at="2021-11-10T22:10:42 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.ecommerce.qa.testcases.ProfilePageTest@4923ab24]" name="setUp" is-config="true" duration-ms="15915" started-at="2021-11-10T22:10:42 IST" finished-at="2021-11-10T22:10:58 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyUsernameLabelTest()[pri:2, instance:com.ecommerce.qa.testcases.ProfilePageTest@4923ab24]" name="verifyUsernameLabelTest" duration-ms="140" started-at="2021-11-10T22:10:58 IST" finished-at="2021-11-10T22:10:58 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUsernameLabelTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.ecommerce.qa.testcases.ProfilePageTest@4923ab24]" name="teardown" is-config="true" duration-ms="1362" started-at="2021-11-10T22:10:58 IST" finished-at="2021-11-10T22:11:00 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.ecommerce.qa.testcases.ProfilePageTest@4923ab24]" name="setUp" is-config="true" duration-ms="13626" started-at="2021-11-10T22:11:00 IST" finished-at="2021-11-10T22:11:13 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="GoToWomensCategoryTest()[pri:3, instance:com.ecommerce.qa.testcases.ProfilePageTest@4923ab24]" name="GoToWomensCategoryTest" duration-ms="3854" started-at="2021-11-10T22:11:13 IST" finished-at="2021-11-10T22:11:17 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GoToWomensCategoryTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.ecommerce.qa.testcases.ProfilePageTest@4923ab24]" name="teardown" is-config="true" duration-ms="973" started-at="2021-11-10T22:11:17 IST" finished-at="2021-11-10T22:11:18 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.ecommerce.qa.testcases.ProfilePageTest@4923ab24]" name="setUp" is-config="true" duration-ms="13809" started-at="2021-11-10T22:11:18 IST" finished-at="2021-11-10T22:11:32 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="GoToDressesCategoryTest()[pri:4, instance:com.ecommerce.qa.testcases.ProfilePageTest@4923ab24]" name="GoToDressesCategoryTest" duration-ms="3312" started-at="2021-11-10T22:11:32 IST" finished-at="2021-11-10T22:11:35 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GoToDressesCategoryTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.ecommerce.qa.testcases.ProfilePageTest@4923ab24]" name="teardown" is-config="true" duration-ms="1313" started-at="2021-11-10T22:11:35 IST" finished-at="2021-11-10T22:11:37 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.ecommerce.qa.testcases.ProfilePageTest@4923ab24]" name="setUp" is-config="true" duration-ms="10837" started-at="2021-11-10T22:11:37 IST" finished-at="2021-11-10T22:11:47 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="GoToTshirtsCategory()[pri:5, instance:com.ecommerce.qa.testcases.ProfilePageTest@4923ab24]" name="GoToTshirtsCategory" duration-ms="3421" started-at="2021-11-10T22:11:47 IST" finished-at="2021-11-10T22:11:51 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GoToTshirtsCategory -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.ecommerce.qa.testcases.ProfilePageTest@4923ab24]" name="teardown" is-config="true" duration-ms="1148" started-at="2021-11-10T22:11:51 IST" finished-at="2021-11-10T22:11:52 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.ecommerce.qa.testcases.ProfilePageTest -->
+      <class name="com.ecommerce.qa.testcases.WomenCategoryPageTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.ecommerce.qa.testcases.WomenCategoryPageTest@44c8afef]" name="setUp" is-config="true" duration-ms="16607" started-at="2021-11-10T22:11:52 IST" finished-at="2021-11-10T22:12:09 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="validateWomenCategoryPageTitleTest()[pri:0, instance:com.ecommerce.qa.testcases.WomenCategoryPageTest@44c8afef]" name="validateWomenCategoryPageTitleTest" duration-ms="1135" started-at="2021-11-10T22:12:09 IST" finished-at="2021-11-10T22:12:10 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateWomenCategoryPageTitleTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.ecommerce.qa.testcases.WomenCategoryPageTest@42e26948]" name="tearDown" is-config="true" duration-ms="1" started-at="2021-11-03T12:41:47Z" finished-at="2021-11-03T12:41:47Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.ecommerce.qa.testcases.WomenCategoryPageTest@44c8afef]" name="tearDown" is-config="true" duration-ms="0" started-at="2021-11-10T22:12:10 IST" finished-at="2021-11-10T22:12:10 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.ecommerce.qa.testcases.WomenCategoryPageTest@44c8afef]" name="setUp" is-config="true" duration-ms="17244" started-at="2021-11-10T22:12:10 IST" finished-at="2021-11-10T22:12:27 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="validateImgTest()[pri:2, instance:com.ecommerce.qa.testcases.WomenCategoryPageTest@44c8afef]" name="validateImgTest" duration-ms="1430" started-at="2021-11-10T22:12:27 IST" finished-at="2021-11-10T22:12:28 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateImgTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.ecommerce.qa.testcases.WomenCategoryPageTest@44c8afef]" name="tearDown" is-config="true" duration-ms="1" started-at="2021-11-10T22:12:28 IST" finished-at="2021-11-10T22:12:28 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.ecommerce.qa.testcases.WomenCategoryPageTest@44c8afef]" name="setUp" is-config="true" duration-ms="14367" started-at="2021-11-10T22:12:28 IST" finished-at="2021-11-10T22:12:43 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="selectItemTest()[pri:3, instance:com.ecommerce.qa.testcases.WomenCategoryPageTest@44c8afef]" name="selectItemTest" duration-ms="75445" started-at="2021-11-10T22:12:43 IST" finished-at="2021-11-10T22:13:58 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectItemTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.ecommerce.qa.testcases.WomenCategoryPageTest@44c8afef]" name="tearDown" is-config="true" duration-ms="1267" started-at="2021-11-10T22:13:58 IST" finished-at="2021-11-10T22:13:59 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.ecommerce.qa.testcases.WomenCategoryPageTest -->
       <class name="com.ecommerce.qa.testcases.LoginPageTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.ecommerce.qa.testcases.LoginPageTest@39c0f4a]" name="setUp" is-config="true" duration-ms="10864" started-at="2021-11-03T12:41:47Z" finished-at="2021-11-03T12:41:58Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.ecommerce.qa.testcases.LoginPageTest@27f723]" name="setUp" is-config="true" duration-ms="14206" started-at="2021-11-10T22:09:47 IST" finished-at="2021-11-10T22:10:01 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="loginPageTitleTest()[pri:1, instance:com.ecommerce.qa.testcases.LoginPageTest@39c0f4a]" name="loginPageTitleTest" duration-ms="14" started-at="2021-11-03T12:41:58Z" finished-at="2021-11-03T12:41:58Z">
+        <test-method status="PASS" signature="loginPageTitleTest()[pri:1, instance:com.ecommerce.qa.testcases.LoginPageTest@27f723]" name="loginPageTitleTest" duration-ms="11" started-at="2021-11-10T22:10:01 IST" finished-at="2021-11-10T22:10:01 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginPageTitleTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.ecommerce.qa.testcases.LoginPageTest@39c0f4a]" name="tearDown" is-config="true" duration-ms="870" started-at="2021-11-03T12:41:58Z" finished-at="2021-11-03T12:41:59Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.ecommerce.qa.testcases.LoginPageTest@27f723]" name="tearDown" is-config="true" duration-ms="899" started-at="2021-11-10T22:10:01 IST" finished-at="2021-11-10T22:10:02 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.ecommerce.qa.testcases.LoginPageTest@27f723]" name="setUp" is-config="true" duration-ms="8859" started-at="2021-11-10T22:10:02 IST" finished-at="2021-11-10T22:10:11 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="LogoImageTest()[pri:2, instance:com.ecommerce.qa.testcases.LoginPageTest@27f723]" name="LogoImageTest" duration-ms="78" started-at="2021-11-10T22:10:11 IST" finished-at="2021-11-10T22:10:11 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogoImageTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.ecommerce.qa.testcases.LoginPageTest@27f723]" name="tearDown" is-config="true" duration-ms="1002" started-at="2021-11-10T22:10:11 IST" finished-at="2021-11-10T22:10:12 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.ecommerce.qa.testcases.LoginPageTest@27f723]" name="setUp" is-config="true" duration-ms="8691" started-at="2021-11-10T22:10:12 IST" finished-at="2021-11-10T22:10:21 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="loginTest()[pri:3, instance:com.ecommerce.qa.testcases.LoginPageTest@27f723]" name="loginTest" duration-ms="4617" started-at="2021-11-10T22:10:21 IST" finished-at="2021-11-10T22:10:25 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.ecommerce.qa.testcases.LoginPageTest@27f723]" name="tearDown" is-config="true" duration-ms="977" started-at="2021-11-10T22:10:25 IST" finished-at="2021-11-10T22:10:26 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
